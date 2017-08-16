@@ -1,0 +1,28 @@
+{
+  "name": "express",
+  "productName": "express",
+  "version": "0.0.0",
+  "description": "my awesome express project",
+  "repository": {
+    "url": "zcong1993/express",
+    "type": "git"
+  },
+  "scripts": {
+    "test": "echo no test && exit 0",
+    "dev": "node index.js",
+    "start": "NODE_ENV=prod node index.js"
+  },
+  "author": "zcong1993 <1005997919@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "express-session": "^1.15.5",
+    "morgan": "^1.8.2",
+    "passport": "^0.4.0",
+    "passport-oauth2": "^1.4.0",
+    "pug": "^2.0.0-rc.2",
+    "request": "^2.81.0"
+  }
+}
