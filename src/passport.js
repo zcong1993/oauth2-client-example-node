@@ -21,6 +21,7 @@ OAuth2Strategy.prototype.userProfile = function (accessToken, done) {
       'Authorization': 'Bearer ' + accessToken
     }
   }
+
   request(opts, (err, resp, body) => {
     if (err) {
       return done(new InternalOAuthError('Failed to fetch user profile', error))
@@ -37,12 +38,13 @@ OAuth2Strategy.prototype.userProfile = function (accessToken, done) {
 passport.use(new OAuth2Strategy({
     authorizationURL: 'http://test.btcc.com:8000/oauth/authorize',
     tokenURL: 'http://test.btcc.com:8000/oauth/token',
-    clientID: 3,
-    clientSecret: 'QcPukqXrlDqgOsiGfUmyOkFptGdmH8OPoXjkw1Eo',
+    clientID: process.env.CLIENTID,
+    clientSecret: process.env.CLIENTSECRET,
     callbackURL: 'http://localhost:3000/oauth/callback',
     scope: 'place-orders user-information'
   },
   function(accessToken, refreshToken, profile, cb) {
+    // your logic here
     console.log(profile)
     return cb(null, profile)
   }
