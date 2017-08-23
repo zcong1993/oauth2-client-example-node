@@ -41,7 +41,7 @@ passport.use(new OAuth2Strategy({
     clientID: process.env.CLIENTID,
     clientSecret: process.env.CLIENTSECRET,
     callbackURL: 'http://localhost:3000/oauth/callback',
-    scope: 'place-orders user-information'
+    scope: 'place-orders user-information need-jwt'
   },
   function(accessToken, refreshToken, profile, cb) {
     // your logic here
