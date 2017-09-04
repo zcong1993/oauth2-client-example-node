@@ -26,7 +26,8 @@ router.get('/logout', (req, res) => {
 
 router.get('/secret', ensureAuthenticated, (req, res) => {
   res.render('secret', {
-    user: req.user
+    user: req.user,
+    homeUrl: process.env.BASEURL + '/home'
   })
 })
 

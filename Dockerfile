@@ -7,6 +7,3 @@ WORKDIR app
 CMD ["npm", "install"]
 
 CMD ["node", "./index.js"]
-
-
-

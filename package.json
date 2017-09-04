@@ -1,8 +1,8 @@
 {
-  "name": "express",
+  "name": "oauth2_client_example",
   "productName": "express",
   "version": "0.0.0",
-  "description": "my awesome express project",
+  "description": "oauth2 client example for dev",
   "repository": {
     "url": "zcong1993/express",
     "type": "git"
@@ -24,5 +24,8 @@
     "passport-oauth2": "^1.4.0",
     "pug": "^2.0.0-rc.2",
     "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "dotenv": "^4.0.0"
   }
 }

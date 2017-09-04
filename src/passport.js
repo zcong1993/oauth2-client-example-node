@@ -1,9 +1,8 @@
 const request = require('request')
 const passport = require('passport')
 const OAuth2Strategy = require('passport-oauth2')
-const axios = require('axios')
 
-const siteURL = 'http://test.btcc.com:8000'
+const siteURL = process.env.BASEURL
 const profileURL = siteURL + '/api/user'
 
 passport.serializeUser(function(user, done) {
@@ -36,8 +35,8 @@ OAuth2Strategy.prototype.userProfile = function (accessToken, done) {
 }
 
 passport.use(new OAuth2Strategy({
-    authorizationURL: 'http://test.btcc.com:8000/oauth/authorize',
-    tokenURL: 'http://test.btcc.com:8000/oauth/token',
+    authorizationURL: `${siteURL}/oauth/authorize`,
+    tokenURL: `${siteURL}/oauth/token`,
     clientID: process.env.CLIENTID,
     clientSecret: process.env.CLIENTSECRET,
     callbackURL: 'http://localhost:3000/oauth/callback',
